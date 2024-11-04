@@ -2,6 +2,7 @@ package com.example.practicanavegacionapi.core.navigation
 
 import android.telecom.Call.Details
 import androidx.compose.runtime.Composable
+import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
@@ -22,14 +23,14 @@ fun NavigationWrapper () {
             LoginScreen { navController.navigate(Home) }
         }
         composable<Home> {
-            HomeScreen{
-               name -> navController.navigate(Detail(name= name))
-            }
+            HomeScreen({ navController.navigate(Detail) })
+
+
         }
 
-        composable<Detail> { backStackEntry ->
-            val detail = backStackEntry.toRoute<Detail>()
-            DetailScreen(detail.name) {navController.popBackStack()}  }
+        composable<Detail> {
+            DetailScreen()
+             {navController.popBackStack()}  }
     }
 }
 

@@ -20,7 +20,7 @@ import androidx.compose.ui.unit.sp
 
 
 @Composable
-fun DetailScreen (name:String, navigateback:() -> Unit){
+fun DetailScreen ( navigateback:() -> Unit){
 
 
     Column(
@@ -29,7 +29,7 @@ fun DetailScreen (name:String, navigateback:() -> Unit){
         horizontalAlignment = Alignment.CenterHorizontally // Alinea horizontalmente al centro
     ) {
         Spacer(modifier = Modifier.weight(1f)) // Espacio inferior
-        Text(text = "Esta en home $name", fontSize = 25.sp)
+        Text(text = "Esta en home ", fontSize = 25.sp)
         Spacer(modifier = Modifier.weight(1f)) // Espacio inferior
 
         Spacer(modifier = Modifier.weight(1f))
